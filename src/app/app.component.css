@@ -1,0 +1,8 @@
+html{
+    height:100%
+}
+body{
+   height: 100%;
+   background-color: antiquewhite;
+   background: linear-gradient(to top right , rgb(149, 83, 158) , rgb(150, 148, 173));
+}

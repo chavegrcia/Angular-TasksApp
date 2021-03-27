@@ -1,0 +1,32 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: 10em;
+}
+ 
+
+
+li {
+  display: inline-block;
+  border: 2px solid #ccc;
+  width: calc(100%/8 - 1px);
+  height: 70px ;
+  
+  text-align: center;
+  cursor: pointer;
+}
+li.days {
+  font-weight: bold;
+}
+li.grey {
+  color: #ccc;
+}
+li:hover {
+  background-color: #ccc;
+}
+.fecha{
+  padding-left: 39.6em;
+  font-size: large;
+
+}
