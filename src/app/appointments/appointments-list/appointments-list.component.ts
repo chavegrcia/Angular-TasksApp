@@ -11,6 +11,8 @@ export class AppointmentsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+   
    
   }
   
@@ -18,11 +20,17 @@ export class AppointmentsListComponent implements OnInit {
   @Input()
   appointments;
   
- delete(index : number){
+  delete(index : number){
     this.appointments.splice(index,1)
-
+    
   }
+  
+  
+ 
+    
 
+    
 
+  
 
 }

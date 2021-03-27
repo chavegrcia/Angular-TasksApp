@@ -5,45 +5,22 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
   ngOnInit() : void{
-  setTimeout((loading) => {
-    this.currentAppointments= 
-      [{
-        name: 'Orientacion',
-        relaseDate : new Date(),
-        price : 1400.99
-      },
-      {
-        name: 'Computer-Science',
-        relaseDate : new Date('2021-08-14'),
-        price : 200.99
-      }];
-
-      this.upcomingAppointments = 
-      [{
-        name: 'Bitcoin inversion',
-        relaseDate : new Date('2020-11-5'),
-        price : 100.99
-      },
-      {
-        name: 'Hackaton',
-        relaseDate : new Date('2022-06-10'),
-        price : 20.00
-      }];
-  }, 2000);
-  
-    
   }
-
-  currentAppointments;
-  upcomingAppointments;
   
-
-   title = 'APPOINTMENT';
-
-
- 
-
+  
+  
+  handleRating(rate: number){
+    if( rate == 1){
+      alert(`Your energy today is : ${rate} %,Give me a smile`)
+    }else if(rate == 2){
+      alert(`Your energy today is : ${rate} %,Thats no to bad,you can do better`)
+    }else{
+      alert(`Your energy today is : ${rate} %,Lets do some work and take that good energy!!! `)
+      
+    }
+  }
+  // selected: Date;
+ title:'';
 }
-

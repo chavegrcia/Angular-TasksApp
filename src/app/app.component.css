@@ -1,8 +1,15 @@
-html{
-    height:100%
+.container{
+    margin: 20px;
 }
-body{
-   height: 100%;
-   background-color: antiquewhite;
-   background: linear-gradient(to top right , rgb(149, 83, 158) , rgb(150, 148, 173));
-}
+
+/* .newEvent{
+    display:flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgba(100, 232, 127, 0.885);
+    position: sticky;
+    position :-webkit-sticky;
+    top: 0;
+    z-index: 2000;
+} */

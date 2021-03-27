@@ -1,29 +1,29 @@
+<app-generic-list [list]="appointments">
+  <ng-container content>
+    <div class="appointments-container">
+      <div *ngFor = "let appointment of appointments ; let index = index" class="appointment-container">
+        <a>
+          <img [src]="appointment.poster" alt="Poster">
+        </a>
 
-<img
-  *ngIf = "!appointments"
-id = "loading"src="https://media0.giphy.com/media/j3IyZq87xdTjsCiO88/giphy.gif?cid=ecf05e47tmq276g3w0z3hzc96szaw3ncbyav7ck78js7mrgm&rid=giphy.gif" alt="">
+        <p>
+            <a>
+              {{appointment.name}}
+            </a>
+        </p>
+        <p>
+           <a>
+            {{appointment.relaseDate | date:"dd-MMMM-yyyy" | uppercase}}
+           </a>
+        </p>
+        <div>
+          <a mat-flat-button color = "">
+            Edit event
+          </a>
 
-<div *ngIf = "appointments?.length === 0">
-    You dont have any appointment this week
-</div>
-
-<ng-container *ngIf = "appointments && appointments.lengt > 0">
-  
-  <div *ngFor = "let appointment of appointments ; let index = index" class="movie-container">
-    <div class="done">
-      <label><input type="checkbox"/>Done</label>
+          <button mat-flat-button color = "warn" type="button"> Delete </button>
+        </div>
+      </div>
     </div>
-      <button (click) = "delete(index)"> Delete </button>
-    <div>
-      {{index}}  {{appointment.name}}
-    </div>
-    
-    <div>
-      {{appointment.relaseDate | date:"dd-MMMM-yyyy" | uppercase}}
-    </div>
-    
-    <div>
-      {{appointment.price | currency}}
-    </div>
-  </div>
-</ng-container>
+  </ng-container>
+</app-generic-list>

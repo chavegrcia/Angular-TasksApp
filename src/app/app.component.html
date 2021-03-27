@@ -1,10 +1,10 @@
-<h2>CURRENT WEEK</h2>
+<app-menu></app-menu>
 
-<!-- Aqui estoy instanciando el template del componente a travez de el selector que se encuentra en appointments-list.ts -->
+<app-mood (onRating)="handleRating($event)"></app-mood>
 
-<app-appointments-list [appointments]= "currentAppointments"></app-appointments-list>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
 
-<h2>UPCOMING APPOINTMENTS</h2>
-<!-- Aqui estoy instanciando el template del componente a travez de el selector que se encuentra en appointments-list.ts -->
-<app-appointments-list [appointments] = "upcomingAppointments"></app-appointments-list>
-
+<!-- <app-calendar (selected)="selected = $event"></app-calendar> 
+selected: {{selected | date}} -->

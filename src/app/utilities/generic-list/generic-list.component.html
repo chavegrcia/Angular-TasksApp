@@ -1,1 +1,24 @@
-<p>generic-list works!</p>
+<div  *ngIf = "!list">
+  <span #loading>
+    <ng-content select="loading"></ng-content>
+  </span>
+
+  <span *ngIf ="!loading.innerHTML.trim()">
+    <img
+    src="https://pa1.narvii.com/6982/fd63ecdd3d57be8d4832917f7e1aaa812d904833r1-800-800_hq.gif" id="loading" style="width: 18%;">
+  </span>
+  
+</div>
+
+<div  *ngIf = "list?.length === 0">
+  <span #empty>
+    <ng-content select="empty"></ng-content>
+  </span>
+  <span *ngIf="!empty.innerHTML.trim()">
+    You dont have any appointment this week
+  </span>
+</div>
+
+<ng-container *ngIf = "list && list.length > 0">
+  <ng-content select= "[content]"></ng-content>
+</ng-container>
