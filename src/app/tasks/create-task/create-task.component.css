@@ -2,18 +2,11 @@ button{
     margin-right: 1em;
 }
 
-.input1{
-    display: inline;
-    
-
-}
-.input2{
-    display: inline;
-
- 
-}
-
 h2{
    display: flex;
 }
 
+.cancel{
+    background-color: rgb(220, 35, 35);
+    color: white;
+}

@@ -1,8 +1,5 @@
-import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,FormControl } from '@angular/forms';
-import { MatDateFormats } from '@angular/material/core';
-import { MatDateRangePicker } from '@angular/material/datepicker';
+import { FormBuilder, FormGroup,FormControl , Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -15,12 +12,9 @@ import { Router } from '@angular/router';
 })
 export class CreateTaskComponent implements OnInit {
   
-  constructor(private router : Router , private formBuilder : FormBuilder ) { }
+  constructor(private router : Router, private formBuilder : FormBuilder ) { }
 
-  range = new FormGroup({
-  start: new FormControl(),
-  end: new FormControl()
-  });
+
   
    
   form : FormGroup
@@ -29,15 +23,12 @@ export class CreateTaskComponent implements OnInit {
   
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      taskName :'',
+      taskName :[ '' , {
+        validators : [ Validators.required , Validators.minLength(3)],
+      }]
       
   
     })
-
-
-
-  
-    
   }
   
   saveTask(){
@@ -45,6 +36,17 @@ export class CreateTaskComponent implements OnInit {
     
     this.router.navigate(['/tasks'])
   }
-  
+
+  NameFieldError(){
+   const field = this.form.get('taskName');
+
+   if(field.hasError('required')){
+     return 'Please enter a Task'
+   }
+   if(field.hasError('minlength')){
+     return 'The minimun length is 3'
+    }
+    else return ''
+  }
 }
 

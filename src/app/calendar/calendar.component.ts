@@ -10,7 +10,7 @@ export class CalendarComponent implements OnInit {
   dates: Array<Date>;
   days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   date = new Date();
-  @Output() selected = new EventEmitter();
+  @Output() selected = new EventEmitter(); //FIXME:no funciona el datapicker
 
   constructor() { 
     this.dates = this.getCalendarDays(this.date);
@@ -49,9 +49,7 @@ export class CalendarComponent implements OnInit {
     return Array.from({ length }, (_, i) => start + i)
   }
 
-  // selected: Date;
-  
+
  
 }
-
 
