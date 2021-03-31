@@ -1,0 +1,10 @@
+<app-menu></app-menu>
+
+<app-mood (onRating)="handleRating($event)"></app-mood>
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+<!-- <app-calendar (selected)="selected = $event"></app-calendar> 
+selected: {{selected | date}} -->

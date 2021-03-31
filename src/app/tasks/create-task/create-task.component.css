@@ -1,0 +1,12 @@
+button{
+    margin-right: 1em;
+}
+
+h2{
+   display: flex;
+}
+
+.cancel{
+    background-color: rgb(220, 35, 35);
+    color: white;
+}

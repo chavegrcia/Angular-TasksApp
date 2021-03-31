@@ -1,0 +1,17 @@
+<h2 >Create Task</h2>
+
+<form (submit) = "saveTask()" [formGroup] = "form">
+    <mat-form-field  appearance = "outline">
+        <mat-label>Task Name</mat-label>
+        <input required   formControlName = "taskName" matInput >
+        <mat-error *ngIf="form.invalid">{{NameFieldError()}}</mat-error>
+       
+    </mat-form-field>
+    
+     <div>
+         <button mat-flat-button [disabled]=form.invalid color="primary">Save Task</button>
+          <a mat-stroked-button routerLink="/tasks" class="cancel"> Cancel</a>
+     </div>
+
+
+</form>
